@@ -1,0 +1,25 @@
+<div class="index_container">
+  <p class="index_header">Ranking - Top Ten Members in Database</p>
+  <table class="index_ranking_table">
+    <tr>
+      <td class="index_ranking_table_headers">Name</td>
+      <td class="index_ranking_table_headers">Overall</td>
+      <td class="index_ranking_table_headers">Level</td>
+    </tr>
+    <% @members.each do |member|%>
+    <tr>
+      <td class="index_ranking_table_names">
+        <%=member.name%>
+      </td>
+      <td class="index_ranking_table_overall">
+        <%=member.overall%>
+      </td>
+      <td class="index_ranking_table_levels">
+        <%=member.level%>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+  <div class="link_wrapper">
+    <%=link_to( "Create new entry", new_member_path, :class=>"link_new")%></div>
+  </div>

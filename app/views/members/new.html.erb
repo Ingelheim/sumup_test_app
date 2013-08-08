@@ -1,0 +1,24 @@
+<div class="index_container">
+	<p class="index_header">Ranking - Top Ten Members in Database (based on Overall)</p>
+	<div class="member_form_wrapper">
+		<%=form_for @member, url: {action: "create"}, html: {class: "member_form"} do |f| %>
+		<div>
+			<p class="form_header">Name</p>
+			<%=f.text_field :name, placeholder: "Enter Name", required: true%>
+		</div>
+		<div>
+			<p class="form_header">Overall
+				<input class="overall_field" type="text" value="50.0">
+			</p>
+			<%=f.range_field :overall, in:0.0..100.0, step: 0.1%>
+		</div>
+		<div>
+			<p class="form_header">Level
+				<input class="level_field" type="text" value="50">
+			</p>
+			<%=f.range_field :level, in:0..100%>
+		</div>
+		<%=f.submit "Create new entry", class: "submit_button" %>
+		<% end %>
+	</div>
+</div>
